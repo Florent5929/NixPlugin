@@ -1,0 +1,12 @@
+name: com.nixplugin
+main: com.nixplugin.Plugin
+version: 1.0.0
+description: Plugin du serveur Nix
+author: Florent
+commands:
+ roll:
+  description: Pour lancer un de.
+ tell:
+  description: Pour envoyer un message prive.
+ compass:
+  description: Pour faire pointer sa boussole.
