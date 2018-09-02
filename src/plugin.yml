@@ -3,6 +3,13 @@ main: com.nixplugin.Plugin
 version: 1.0.0
 description: Plugin du serveur Nix
 author: Florent
+permissions:
+ warps.use:
+  description: Pour utiliser les warps.
+  default: op
+ warps.manage:
+  description: Pour manager les warps.
+  default: op
 commands:
  roll:
   description: Pour lancer un de.
@@ -10,3 +17,5 @@ commands:
   description: Pour envoyer un message prive.
  compass:
   description: Pour faire pointer sa boussole.
+ warp:
+  description: Pour utiliser ou manager les warps.

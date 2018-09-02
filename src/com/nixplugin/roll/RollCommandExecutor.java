@@ -38,11 +38,11 @@ public class RollCommandExecutor implements CommandExecutor {
 			} else {
 				int roll = Functions.getRandomIntegerBetween(1, number);
 				Player player = (Player) sender;
-				String customName = player.getCustomName();
+				String name = (player.getCustomName() != null ? player.getCustomName() : player.getName());
 
 				for (Player onlinePlayer : Bukkit.getServer().getOnlinePlayers()) {
 					if(rayon == 0 || Functions.getIfPlayersAreNear(player, onlinePlayer, rayon)){
-					onlinePlayer.sendMessage(customName + " a tiré un " + roll + " sur son dé à " + number + " faces.");
+					onlinePlayer.sendMessage(name + " a tiré un " + roll + " sur son dé à " + number + " faces.");
 					}
 				}
 				

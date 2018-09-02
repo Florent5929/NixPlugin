@@ -13,6 +13,7 @@ import com.nixplugin.messages.MessagesListener;
 import com.nixplugin.playerdeath.PlayerDeathListener;
 import com.nixplugin.roll.RollCommandExecutor;
 import com.nixplugin.tell.TellCommandExecutor;
+import com.nixplugin.warp.WarpCommandExecutor;
 import com.nixplugin.xp.XPListener;
 
 /**
@@ -36,10 +37,25 @@ public class Plugin extends JavaPlugin {
 		this.getCommand("roll").setExecutor(new RollCommandExecutor());
 		this.getCommand("tell").setExecutor(new TellCommandExecutor());
 		this.getCommand("compass").setExecutor(new CompassCommandExecutor());
+		this.getCommand("warp").setExecutor(new WarpCommandExecutor());
 		
 		try {
 			PlayerDeathListener.createDefaultConfig();
+			WarpCommandExecutor.createDefaultConfig();
 		} catch (IOException e) {
+			Log.error(Level.SEVERE, "Impossible de créer les fichiers de configuration.");
+			e.printStackTrace();
+		}
+		
+		WarpCommandExecutor.loadFromConfig();
+	}
+	
+	@Override
+	public void onDisable() {
+		try {
+			WarpCommandExecutor.saveOnConfig();
+		} catch (IOException e) {
+			Log.error(Level.SEVERE, "Impossible de sauvegarder les warps dans la configuration.");
 			e.printStackTrace();
 		}
 	}
