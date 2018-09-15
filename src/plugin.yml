@@ -4,6 +4,21 @@ version: 1.0.0
 description: Plugin du serveur Nix
 author: Florent
 permissions:
+ nixplugin.eclair:
+  description: Pour envoyer un eclair.
+  default: op
+ gamemode.survival:
+  description: Pour se mettre en gamemode 0.
+  default: op
+ gamemode.creative:
+  description: Pour se mettre en gamemode 1.
+  default: op
+ gamemode.adventure:
+  description: Pour se mettre en gamemode 2.
+  default: op
+ gamemode.spectator:
+  description: Pour se mettre en gamemode 3.
+  default: op
  warps.use:
   description: Pour utiliser les warps.
   default: op
@@ -19,3 +34,9 @@ commands:
   description: Pour faire pointer sa boussole.
  warp:
   description: Pour utiliser ou manager les warps.
+ mana:
+  description: Pour voir ou changer le niveau vanilla d'un joueur.
+ gm:
+  description: Pour changer de gamemode.
+ eclair:
+  description: Pour envoyer un eclair.

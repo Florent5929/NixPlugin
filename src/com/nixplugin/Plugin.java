@@ -9,6 +9,9 @@ import org.bukkit.craftbukkit.libs.jline.internal.Log;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.nixplugin.compass.CompassCommandExecutor;
+import com.nixplugin.eclair.EclairCommandExecutor;
+import com.nixplugin.gamemode.GmCommandExecutor;
+import com.nixplugin.mana.ManaCommandExecutor;
 import com.nixplugin.messages.MessagesListener;
 import com.nixplugin.playerdeath.PlayerDeathListener;
 import com.nixplugin.roll.RollCommandExecutor;
@@ -38,6 +41,9 @@ public class Plugin extends JavaPlugin {
 		this.getCommand("tell").setExecutor(new TellCommandExecutor());
 		this.getCommand("compass").setExecutor(new CompassCommandExecutor());
 		this.getCommand("warp").setExecutor(new WarpCommandExecutor());
+		this.getCommand("mana").setExecutor(new ManaCommandExecutor());
+		this.getCommand("gm").setExecutor(new GmCommandExecutor());
+		this.getCommand("eclair").setExecutor(new EclairCommandExecutor());
 		
 		try {
 			PlayerDeathListener.createDefaultConfig();
